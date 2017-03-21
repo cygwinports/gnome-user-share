@@ -1,0 +1,19 @@
+inherit httpd gnome2
+
+NAME="gnome-user-share"
+VERSION=3.18.3
+RELEASE=1
+CATEGORY="GNOME"
+SUMMARY="GNOME user file sharing service"
+DESCRIPTION="The program is meant to run in the background when the user is
+logged in, and when file sharing is enabled a webdav server is started that
+shares the ~/Public folder. The share is then published to all computers on
+the local network using mDNS/rendezvous."
+
+PATCH_URI="
+	3.18.3-without-systemd.patch
+"
+
+REQUIRES="httpd httpd-mod_dnssd"
+
+CYGCONF_ARGS="--with-httpd=${HTTPD} --with-modules-path=${HTTPD_LIBEXECDIR}"

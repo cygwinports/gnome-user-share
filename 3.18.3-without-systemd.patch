@@ -1,0 +1,11 @@
+--- origsrc/gnome-user-share-3.18.3/configure.ac	2016-09-20 04:14:16.000000000 -0500
++++ src/gnome-user-share-3.18.3/configure.ac	2017-03-15 23:08:03.433389400 -0500
+@@ -97,7 +97,7 @@ AM_GLIB_GNU_GETTEXT
+ 
+ dnl ==========================================================================
+ dnl systemd user unit directory
+-PKG_CHECK_EXISTS([systemd],, [AC_MSG_ERROR([systemd development headers not found])])
++PKG_CHECK_EXISTS([systemd],, [with_systemduserunitdir=no])
+ AC_ARG_WITH([systemduserunitdir],
+ 	    AS_HELP_STRING([--with-systemduserunitdir=DIR], [Directory for systemd user service files]),
+ 	    [],
